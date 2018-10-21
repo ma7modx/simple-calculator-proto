@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package calculator;
+
+// The calculator service definition.
+service Calculator {
+  rpc Add (SimpleOperationRequest) returns (SimpleOperationReply) {}
+  rpc Subtract (SimpleOperationRequest) returns (SimpleOperationReply) {}
+  rpc Multiply (SimpleOperationRequest) returns (SimpleOperationReply) {}
+  rpc Divide (SimpleOperationRequest) returns (SimpleOperationReply) {}
+}
+
+// The request message containing the first and second arguments for the operation.
+message SimpleOperationRequest {
+  double arg1 = 1;
+  double arg2 = 2;
+}
+
+// The response message containing the result
+message SimpleOperationReply {
+  double result = 1;
+}
